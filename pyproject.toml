@@ -12,7 +12,8 @@ dependencies = [
     "flask (>=3.1.2,<4.0.0)",
     "uuid (>=1.30,<2.0)",
     "marshmallow (>=4.0.0,<5.0.0)",
-    "pytest (>=8.4.1,<9.0.0)"
+    "pytest (>=8.4.1,<9.0.0)",
+    "ruff (>=0.12.10,<0.13.0)"
 ]
 
 [tool.poetry]
@@ -22,3 +23,16 @@ packages = [{include = "rabit", from = "src"}]
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+line-length = 79
+extend-exclude = ['migrations']
+
+[tool.ruff.lint]
+preview = true
+select =['I','F','E','W','PL','PL']
+
+[tool.ruff.format]
+preview=true
+quote-style = 'single'
